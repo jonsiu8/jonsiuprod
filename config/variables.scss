@@ -61,8 +61,8 @@
 
 // Configure your colors here
 
-$brand-primary: #cf1993;
-$brand-secondary: #7b8acc;
+$brand-primary: #333333;
+$brand-secondary: #000199;
 $grey: #252525;
 $black: #000;
 
@@ -71,7 +71,7 @@ $black: #000;
 
 $content-width: 100vw;
 $gutter: 0;
-$columns: 3;
+$columns: 4;
 
 $row-size: calc(
   (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns}

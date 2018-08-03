@@ -6,9 +6,8 @@ import Footer from '../components/Footer/Footer';
 import config from '../../config/SiteConfig';
 
 const Gallery = () => (
-  <div className="container contact-container">
-    <Helmet title={`Contact | ${config.siteTitle}`} />
-    <Header>Gallery</Header>
+  <div className="container gallery-container">
+    <Helmet title={`Gallery | ${config.siteTitle}`} />
     <Container text>
       <h1>Gallery!</h1>
       <p>

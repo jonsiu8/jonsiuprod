@@ -6,9 +6,8 @@ import Footer from '../components/Footer/Footer';
 import config from '../../config/SiteConfig';
 
 const Services = () => (
-  <div className="container contact-container">
-    <Helmet title={`Contact | ${config.siteTitle}`} />
-    <Header>Services</Header>
+  <div className="container services-container">
+    <Helmet title={`Services | ${config.siteTitle}`} />
     <Container text>
       <h1>Services!</h1>
       <p>
