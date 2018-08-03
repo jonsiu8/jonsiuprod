@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
   siteTitle: 'jonsiuproductions', // Navigation and Site Title
   siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
+  siteUrl: 'https://wwww.jonsiu.online', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
@@ -22,8 +22,8 @@ module.exports = {
   // More information here: https://date-fns.org/v1.29.0/docs/format
   dateFormat: 'DD.MM.YYYY',
   // Manifest and Progress color
-  themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c',
+  themeColor: '#000199',
+  backgroundColor: '#0405B9',
   // Settings for typography.js
   headerFontFamily: 'Merriweather',
   bodyFontFamily: 'Roboto',
