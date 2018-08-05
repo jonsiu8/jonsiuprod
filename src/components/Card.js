@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
-import Overdrive from 'react-overdrive';
+//import Overdrive from 'react-overdrive';
 
 const CardItem = styled(Link)`
   min-height: 500px;
@@ -109,7 +109,7 @@ const Name = styled.h2`
 `;
 
 const Card = ({ path, cover, date, areas, title, slug }) => (
-  <Overdrive id={`${slug}-cover`}>
+  //<Overdrive id={`${slug}-cover`}>
     <CardItem to={path}>
       <Cover>
         <Img sizes={cover} />
@@ -124,7 +124,7 @@ const Card = ({ path, cover, date, areas, title, slug }) => (
         </Content>
       </Data>
     </CardItem>
-  </Overdrive>
+  //</Overdrive>
 );
 
 export default Card;

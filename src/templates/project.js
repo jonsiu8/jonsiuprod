@@ -43,7 +43,7 @@ const Project = props => {
           </Overdrive>
         </InnerWrapper>
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-        <ProjectPagination next={next} prev={prev} />
+        {/*<ProjectPagination next={next} prev={prev} />*/}
       </OuterWrapper>
     </React.Fragment>
   );
@@ -59,7 +59,7 @@ export const pageQuery = graphql`
       frontmatter {
         cover {
           childImageSharp {
-            sizes(maxWidth: 1600, quality: 90, traceSVG: { color: "#328bff" }) {
+            sizes(maxWidth: 1600, quality: 90, traceSVG: { color: "#990100" }) {
               ...GatsbyImageSharpSizes_withWebp_tracedSVG
             }
             resize(width: 800) {

@@ -38,8 +38,8 @@ const Index = ({
       <Grid>
         {edges.map(project => (
           <Card
-            date={project.node.frontmatter.date}
-            title={project.node.frontmatter.title}
+            //date={project.node.frontmatter.date}
+            //title={project.node.frontmatter.title}
             cover={project.node.frontmatter.cover.childImageSharp.sizes}
             path={project.node.fields.slug}
             areas={project.node.frontmatter.areas}
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
           frontmatter {
             cover {
               childImageSharp {
-                sizes(maxWidth: 850, quality: 90, traceSVG: { color: "#328bff" }) {
+                sizes(maxWidth: 850, quality: 90, traceSVG: { color: "#990100" }) {
                   ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }

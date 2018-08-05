@@ -1,9 +1,9 @@
 ---
 cover: "./roman-kraft.jpg"
 date: "2017-12-03"
-title: "Roman Kraft"
+title: "Events and Shows"
 areas:
-    - Still
+    - Events and Shows
 ---
 
 ![](./carlota-vidal.jpg)

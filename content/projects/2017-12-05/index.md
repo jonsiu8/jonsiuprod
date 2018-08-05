@@ -1,10 +1,9 @@
 ---
 cover: "./marion-michele.jpg"
 date: "2017-12-05"
-title: "Marion Michele"
+title: "Portraits"
 areas:
-    - Photography
-    - Art
+    - Portraits
 ---
 
 ![](./matt-safian.jpg)

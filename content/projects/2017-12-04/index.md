@@ -1,9 +1,9 @@
 ---
 cover: "./matt-cannon.jpg"
 date: "2017-12-04"
-title: "Matt Cannon"
+title: "Weddings"
 areas:
-    - Photography
+    - Weddings
 ---
 
 ![](./isak-dalsfelt.jpg)
