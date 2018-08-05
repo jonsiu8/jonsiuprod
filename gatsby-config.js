@@ -1,4 +1,5 @@
-const config = require('./config/SiteConfig');
+const theme = require('./config/theme');
+const config = require('./config/site');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
@@ -9,6 +10,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -21,14 +23,6 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1600,
-              quality: 90,
-              linkImagesToOriginal: false,
-            },
-          },
-          {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
@@ -36,7 +30,12 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe',
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: theme.maxWidths.project,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
           },
         ],
       },
@@ -55,16 +54,14 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sass',
+    'gatsby-plugin-react-next',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'src/utils/typography.jsx',
+        pathToConfigModule: 'src/utils/typography.js',
       },
     },
-    'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-react-next',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

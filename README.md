@@ -1,16 +1,17 @@
-![](https://i.imgur.com/M0nwIVi.png)
+![](https://i.imgur.com/xPj0ICn.png)
 
-# Gatsby Starter Portfolio: Emma
+# Gatsby Starter Portfolio: Emilia
 
 A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
 
-[Demo Website](https://portfolio-emma.netlify.com/)
+[Demo Website](https://portfolio-emilia.netlify.com/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
 
-- Full-width grid-layout
-- Large images
-- Light theme
+- Focus on big images
+- Dark theme
+- Image grid powered by CSS Grid
+- One-Page layout with sub-pages for projects
 
 ## Why?
 
@@ -19,7 +20,7 @@ If you want to quickly bootstrap a design/photography portfolio or use it as a f
 I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
 
 Also check out the other *gatsby-starter-portfolio*:
-- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
+- [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
 - [gatsby-starter-portfolio-bella](https://github.com/LeKoArts/gatsby-starter-portfolio-bella)
 - [gatsby-starter-portfolio-cara](https://github.com/LeKoArts/gatsby-starter-portfolio-cara)
 
@@ -29,9 +30,13 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 - Configurable
     - Use the SiteConfig.js to easily change the most important information
-    - Easily change the font
-- Automatic colors for your projects (with the help of [vibrant.js](https://jariz.github.io/vibrant.js/))
+    - Google Fonts
+    - Use the Style.js to configure your CSS
 - Projects in Markdown
+- Element Transitions with [React Overdrive](https://github.com/berzniz/react-overdrive)
+- Image Grid with CSS Grid
+- [HeroPatterns](http://www.heropatterns.com/) Header
+- Styled components
 - Google Analytics Support
 - SEO
     - Sitemap
@@ -43,8 +48,8 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 - Typography.js
 - Responsive images
     - The right image size for every screen size
-    - Traced SVG loading (lazy-loading)
-    - WebP support
+    - Traced SVG Loading (Lazy-Loading)
+    - WebP Support
 
 ## Getting Started
 
@@ -55,15 +60,15 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emilia
 npm run dev
 ```
 
 ### Adding a new project
 - Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
 - Create a new markdown file, add the frontmatter (use the same date format)
-- Add an image and reference it in your frontmatter as ``cover``
-- Write your content below the frontmatter
+    - Reference the image you want to be shown in the grid and as the first image on the project as ``cover``
+- Add your other images below the frontmatter (you can also include text)
 
 If you're still unsure have a look at the already existing examples.
 
@@ -80,88 +85,73 @@ Copy the content of the ``public`` folder to your webhost or use a website like 
 
 ## Configuration
 
-You can configure your setup in ``config/SiteConfig``:
+You can configure your setup in ``config/site.js``:
 
 ```JS
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  siteTitle: 'Emma', // Navigation and Site Title
-  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
+
+  siteTitle: 'Emilia', // Navigation and Site Title
+  siteTitleAlt: 'Emilia - Gatsby Starter Portfolio', // Alternative Site title for SEO
+  siteUrl: 'https://portfolio-emilia.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
+  siteDescription: 'Dark One-Page portfolio with cards & detailed project views',
+
   siteFBAppID: '123456789', // Facebook App ID
-  userTwitter: '@emma', // Twitter Username
-  // og: Meta Tags
-  ogSiteName: 'emma', // Facebook Site Name
-  ogLanguage: 'de_DE',
+  userTwitter: '@emilia', // Twitter Username
+  ogSiteName: 'emilia', // Facebook Site Name
+  ogLanguage: 'de_DE', // og:language
   googleAnalyticsID: 'UA-12345689-1',
-  copyright: 'Copyright © 2017. All rights reserved. Pictures by Unsplash.', // Copyright in the footer of the site
-  // You can translate these three words into your language if you want.
-  // They'll be shown on the project page header
-  client: 'Client',
-  date: 'Date',
-  service: 'Service',
-  // Date format used in your project header
-  // More information here: https://date-fns.org/v1.29.0/docs/format
-  dateFormat: 'DD.MM.YYYY',
+
   // Manifest and Progress color
-  themeColor: '#000199',
-  backgroundColor: '#0405B9',
+  themeColor: '#3498DB',
+  backgroundColor: '#2b2e3c',
+
   // Settings for typography.js
-  headerFontFamily: 'Merriweather',
-  bodyFontFamily: 'Roboto',
+  headerFontFamily: 'Open Sans',
+  bodyFontFamily: 'Space Mono',
   baseFontSize: '16px',
+
+  // Your information
+  avatar: '/logos/social.png',
+  name: 'LekoArts',
+  location: 'Germany',
+  socialMedia: [
+    {
+      url: 'https://www.facebook.com/lekoarts.de',
+      name: 'Facebook',
+    },
+    {
+      url: 'https://www.instagram.com/lekoarts.de',
+      name: 'Instagram',
+    },
+  ],
 };
 ```
 
-You can also configure the styling of the site by editing the SCSS variables in ``config/_variables.scss``:
+You can also configure the styling by editing the ``config/theme.js`` file:
 
-```SCSS
-// --------------
-// Configuration
-// --------------
+```JS
+// You can grab your own pattern here:
+// http://www.heropatterns.com/
 
-// Configure your colors here
-
-$brand-primary: #cf1993;
-$brand-secondary: #7b8acc;
-$grey: #252525;
-$black: #000000;
-
-// Configure your grid here
-// You don't need to change it!
-
-$content-width: 100vw;
-$gutter: 0px;
-$columns: 3;
-
-$row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
-
-// Configure the max-width of your containers here
-// Try to keep it in sync with maxWidth of `gatsby-remark-images`
-
-$container: 100rem;
-$container-text: 55rem; // Longer texts should have a smaller max-width to improve readability
-
-// Responsive Typography
-// You can set your min and max font-size here
-// More information: https://www.rucksackcss.org/docs/#responsive-type
-
-html {
-    font-size: responsive 12px 16px;
-    font-range: 420px 1280px;
-}
+module.exports = {
+  bgPattern: `data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316191f' fill-opacity='0.8'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E`,
+  colors: {
+    bg: '#16191f',
+    color: 'white',
+    secondary: '#b6b6b6',
+    link: '#328bff',
+    linkHover: '#79a8ff',
+  },
+  maxWidths: {
+    general: '1600px',
+    project: 1600,
+  },
+  gridColumns: 2,
+  contentPadding: '1.0875rem',
+};
 ```
 
 **Attention:** You also need to edit ``static/robots.txt`` to include your domain!
-
-## Automatic Colors
-
-By default the hover overlay of the grid image and the header on the project page automatically choose its color by using [react-palette](https://github.com/leonardokl/react-palette).
-The plugin chooses the *vibrant* color of the image and applies it as the ``background-color`` for the hover overlay and header background. If you don't want that behavior you can delete the ``<Palette />`` component both from ``pages/index.jsx`` and ``templates/project.jsx``.
-
-## Credits
-
-- Inspired by [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)

@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const projectPage = path.resolve('src/templates/project.jsx');
+    const projectPage = path.resolve('src/templates/project.js');
     resolve(
       graphql(`
         {
@@ -34,6 +34,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               node {
                 fields {
                   slug
+                }
+                frontmatter {
+                  title
                 }
               }
             }
@@ -46,12 +49,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors);
         }
 
-        result.data.projects.edges.forEach(edge => {
+        const projectPosts = result.data.projects.edges;
+
+        projectPosts.forEach((edge, index) => {
+          const next = index === 0 ? null : projectPosts[index - 1].node;
+          const prev = index === projectPosts.length - 1 ? null : projectPosts[index + 1].node;
+
           createPage({
             path: edge.node.fields.slug,
             component: projectPage,
             context: {
               slug: edge.node.fields.slug,
+              prev,
+              next,
             },
           });
         });

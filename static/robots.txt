@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: */imprint/
+Disallow:
 
-sitemap: https://www.jonsiu.online/
+sitemap: https://portfolio-emilia.netlify.com/sitemap.xml
