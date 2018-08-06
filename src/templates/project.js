@@ -37,10 +37,8 @@ const Project = props => {
         areas={project.areas}
       />
       <OuterWrapper>
-        <InnerWrapper>
-          <Overdrive id={`${slug}-cover`}>
-            <Img sizes={project.cover.childImageSharp.sizes} />
-          </Overdrive>
+        <InnerWrapper>         
+          <Img sizes={project.cover.childImageSharp.sizes} />         
         </InnerWrapper>
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
         {/*<ProjectPagination next={next} prev={prev} />*/}
@@ -59,8 +57,8 @@ export const pageQuery = graphql`
       frontmatter {
         cover {
           childImageSharp {
-            sizes(maxWidth: 1600, quality: 90, traceSVG: { color: "#990100" }) {
-              ...GatsbyImageSharpSizes_withWebp_tracedSVG
+            sizes(maxWidth: 700) {
+              ...GatsbyImageSharpSizes
             }
             resize(width: 800) {
               src
