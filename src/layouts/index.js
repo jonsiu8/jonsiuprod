@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { injectGlobal, ThemeProvider } from 'styled-components';
+import MobileHeaderSection from '../components/MobileHeaderSection.js'
 
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
@@ -36,6 +37,13 @@ injectGlobal`
 const TemplateWrapper = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
+    <MobileHeaderSection 
+        //imgAltTitle={data.site.siteMetadata.title} 
+        mobileMenuLink1="/get-started/savings"
+        mobileMenuLink2="/classes"
+        mobileMenuLink3="/tools"
+        mobileMenuLink4="/contact"
+      />
       <Helmet>
         <link rel="shortcut icon" href={favicon} />
       </Helmet>
