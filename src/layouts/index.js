@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import favicon from './favicon.ico';
 import config from '../../config/site';
 import theme from '../../config/theme';
+import Navigation from '../components/Navigation.js';
 
 /* eslint no-unused-expressions: off */
 injectGlobal`
@@ -37,13 +38,14 @@ injectGlobal`
 const TemplateWrapper = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
-    <MobileHeaderSection 
+    {/*<MobileHeaderSection 
         //imgAltTitle={data.site.siteMetadata.title} 
         mobileMenuLink1="/get-started/savings"
         mobileMenuLink2="/classes"
         mobileMenuLink3="/tools"
         mobileMenuLink4="/contact"
-      />
+    />*/}
+      <Navigation/>
       <Helmet>
         <link rel="shortcut icon" href={favicon} />
       </Helmet>
