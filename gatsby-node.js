@@ -1,71 +1,44 @@
-const path = require('path');
-const _ = require('lodash');
-
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
-  let slug;
-  if (node.internal.type === 'MarkdownRemark') {
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-    }
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    }
-    createNodeField({ node, name: 'slug', value: slug });
-  }
-};
+const _ = require("lodash")
+const Promise = require("bluebird")
+const path = require("path")
+const select = require(`unist-util-select`)
+const fs = require(`fs-extra`)
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const projectPage = path.resolve('src/templates/project.js');
+    const pages = []
+    const blogPost = path.resolve("./src/templates/blog-post.js")
     resolve(
-      graphql(`
-        {
-          projects: allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
+      graphql(
+        `
+      {
+        allMarkdownRemark(limit: 1000) {
+          edges {
+            node {
+              frontmatter {
+                path
               }
             }
           }
         }
-      `).then(result => {
+      }
+    `
+      ).then(result => {
         if (result.errors) {
-          /* eslint no-console: "off" */
-          console.log(result.errors);
-          reject(result.errors);
+          console.log(result.errors)
+          reject(result.errors)
         }
 
-        const projectPosts = result.data.projects.edges;
-
-        projectPosts.forEach((edge, index) => {
-          const next = index === 0 ? null : projectPosts[index - 1].node;
-          const prev = index === projectPosts.length - 1 ? null : projectPosts[index + 1].node;
-
+        // Create blog posts pages.
+        _.each(result.data.allMarkdownRemark.edges, edge => {
           createPage({
-            path: edge.node.fields.slug,
-            component: projectPage,
-            context: {
-              slug: edge.node.fields.slug,
-              prev,
-              next,
-            },
-          });
-        });
+            path: edge.node.frontmatter.path,
+            component: blogPost
+          })
+        })
       })
-    );
-  });
-};
+    )
+  })
+}
