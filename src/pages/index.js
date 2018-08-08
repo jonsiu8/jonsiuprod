@@ -58,6 +58,17 @@ class Index extends React.Component {
             </div>
           </section>
 
+          <section id="intro" className="main">
+            <div className="spotlight">
+              <div className="content">
+                <header className="major">
+                  <h2><Link to="/generic">Portraits</Link></h2>
+                </header>
+              </div>
+              <span className="image"><Link to="/generic"><img src={pic01} alt="" /></Link></span>
+            </div>
+          </section>
+
           <section id="first" className="main special">
             <header className="major">
               <h2>Magna veroeros</h2>
