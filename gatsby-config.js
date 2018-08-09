@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: "Jon Siu Productions",
     author: "jon siu",
-    description: "A Gatsby of Jon Siu Productions"
+    description: "A Gatsby of Jon Siu Productions",
+    siteUrl: 'https://www.jonsiu.online',
   },
   pathPrefix: '/',
   plugins: [
@@ -16,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
         path: `${__dirname}/src/assets/images`,
+        name: `images`,
       },
     },
     {
@@ -27,7 +28,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 590,
             },
           },
           "gatsby-remark-copy-linked-files",

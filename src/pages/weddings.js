@@ -8,19 +8,19 @@ import pic04 from '../assets/images/pic04.jpg'
 import Img from 'gatsby-image'
 
 
-class Generic extends React.Component {
+class Weddings extends React.Component {
   render() {
 
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
 
-        <HeaderGeneric />
+        <h1>WEDDINGS</h1>
         <div id="main">
           <section id="content" className="main">
           
             <span className="image main"><Img sizes={this.props.data.imageOne.sizes}/></span>
-            <h2>Magna feugiat lorem</h2>
+            <h2>Weddings</h2>
             <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
             <p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
             <h2>Tempus veroeros</h2>
@@ -33,10 +33,10 @@ class Generic extends React.Component {
   }
 }
 
-export default Generic
+export default Weddings
 
 export const pageQuery = graphql`
-  query GenericQuery {
+  query WeddingsQuery {
     site {
       siteMetadata {
         title

@@ -7,7 +7,7 @@ import Waypoint from 'react-waypoint'
 import Header from '../components/Header'
 import Nav from '../components/Nav'
 import pic01 from '../assets/images/pic01.jpg'
-import pic01small from '../assets/images/pic01small.jpg'
+import Img from 'gatsby-image'
 
 class Index extends React.Component {
   constructor(props) {
@@ -40,15 +40,23 @@ class Index extends React.Component {
         </Waypoint>
         {/*<Nav sticky={this.state.stickyNav} />*/}
 
-        <div id="main">
-          <section id="intro" className="main">
-            <div className="spotlight">
-       
-              <span className="image"><Link to="/generic"><img src={pic01} alt="" /></Link></span>
-              <span className="image"><Link to="/generic"><img src={pic01} alt="" /></Link></span>
-              <span className="image"><Link to="/generic"><img src={pic01} alt="" /></Link></span>
-            </div>
-          </section>     
+        <div id="main">   
+          <section id="intro" className="main">         
+            <ul className="features">
+                <li>
+                  <Link to="/portraits"><Img sizes={this.props.data.imagePortraits.sizes}/></Link>
+                  <h3>Portraits</h3>
+                </li>
+                <li>
+                  <Link to="/weddings"><Img sizes={this.props.data.imageEvents.sizes}/></Link>
+                  <h3>Events</h3>
+                </li>
+                <li>
+                  <Link to="/events"><Img sizes={this.props.data.imageWeddings.sizes}/></Link>
+                  <h3>Weddings</h3>
+                </li>
+            </ul>
+          </section>
         </div>
       </div>
     )
@@ -68,5 +76,20 @@ export const pageQuery = graphql`
         title
       }
     }
+    imagePortraits: imageSharp(id: { regex: "/PortraitsCover.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    imageEvents: imageSharp(id: { regex: "/EventsCover.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    } 
+    imageWeddings: imageSharp(id: { regex: "/WeddingsCover.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    } 
   }
 `
