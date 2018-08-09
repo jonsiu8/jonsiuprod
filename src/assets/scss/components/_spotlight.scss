@@ -27,15 +27,15 @@
 
 		.image {
 			display: inline-block;
-			margin-left: 4em;
-			padding: 0.65em;
+			margin: auto;
+			padding: 0.5em;
 			border-radius: 100%;
 			border: solid 1px;
 
 			img {
 				display: block;
 				border-radius: 100%;
-				width: 16em;
+				width: 17em;
 			}
 		}
 
@@ -61,7 +61,7 @@
 
 			.image {
 				@include vendor('flex', '0 1 auto');
-				margin-left: 0;
+				margin-left: auto;
 				margin-bottom: _size(element-margin);
 			}
 		}
@@ -71,7 +71,7 @@
 				padding: 0.35em;
 
 				img {
-					width: 12em;
+					width: 14em;
 				}
 			}
 		}
