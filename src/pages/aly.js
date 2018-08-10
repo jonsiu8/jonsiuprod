@@ -8,14 +8,14 @@ import pic04 from '../assets/images/pic04.jpg'
 import Img from 'gatsby-image'
 
 
-class Raki1 extends React.Component {
+class Aly extends React.Component {
   render() {
 
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
 
-        <h1>Raki</h1>
+        <h1>Aly</h1>
         <div id="main">
 
           <section id="intro" className="main">         
@@ -48,41 +48,41 @@ class Raki1 extends React.Component {
   }
 }
 
-export default Raki1
+export default Aly
 
 export const pageQuery = graphql`
-  query Raki1Query {
+  query AlyQuery {
     site {
       siteMetadata {
         title
       }
     }
-    image01: imageSharp(id: { regex: "/raki01.jpg/" }) {
+    image01: imageSharp(id: { regex: "/aly01.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
-    image02: imageSharp(id: { regex: "/raki02.jpg/" }) {
+    image02: imageSharp(id: { regex: "/aly02.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     } 
-    image03: imageSharp(id: { regex: "/raki03.jpg/" }) {
+    image03: imageSharp(id: { regex: "/aly03.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
-    image04: imageSharp(id: { regex: "/raki04.jpg/" }) {
+    image04: imageSharp(id: { regex: "/aly04.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     } 
-    image05: imageSharp(id: { regex: "/raki05.jpg/" }) {
+    image05: imageSharp(id: { regex: "/aly05.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     } 
-    image06: imageSharp(id: { regex: "/raki06.jpg/" }) {
+    image06: imageSharp(id: { regex: "/aly06.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }

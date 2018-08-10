@@ -44,7 +44,7 @@ class Index extends React.Component {
           <section id="intro" className="main">         
             <ul className="features">
                 <li>
-                  <Link to="/raki1"><Img sizes={this.props.data.image01.sizes}/></Link>
+                  <Link to="/raki"><Img sizes={this.props.data.image01.sizes}/></Link>
                   <h3>Raki</h3>
                 </li>
                 <li>
@@ -56,15 +56,15 @@ class Index extends React.Component {
                   <h3>Stef</h3>
                 </li>
                 <li>
-                  <Link to="/stef"><Img sizes={this.props.data.image04.sizes}/></Link>
+                  <Link to="/aly"><Img sizes={this.props.data.image04.sizes}/></Link>
                   <h3>Aly</h3>
                 </li>
                 <li>
-                  <Link to="/stef"><Img sizes={this.props.data.image05.sizes}/></Link>
+                  <Link to="/jasonpia"><Img sizes={this.props.data.image05.sizes}/></Link>
                   <h3>Jason and Pia</h3>
                 </li>
                 <li>
-                  <Link to="/stef"><Img sizes={this.props.data.image06.sizes}/></Link>
+                  <Link to="/britjoy"><Img sizes={this.props.data.image06.sizes}/></Link>
                   <h3>Briton and Joy</h3>
                 </li>
             </ul>
