@@ -44,16 +44,28 @@ class Index extends React.Component {
           <section id="intro" className="main">         
             <ul className="features">
                 <li>
-                  <Link to="/portraits"><Img sizes={this.props.data.imagePortraits.sizes}/></Link>
-                  <h3>Portraits</h3>
+                  <Link to="/raki1"><Img sizes={this.props.data.image01.sizes}/></Link>
+                  <h3>Raki</h3>
                 </li>
                 <li>
-                  <Link to="/weddings"><Img sizes={this.props.data.imageEvents.sizes}/></Link>
-                  <h3>Events</h3>
+                  <Link to="/tooting"><Img sizes={this.props.data.image02.sizes}/></Link>
+                  <h3>Tooting</h3>
                 </li>
                 <li>
-                  <Link to="/events"><Img sizes={this.props.data.imageWeddings.sizes}/></Link>
-                  <h3>Weddings</h3>
+                  <Link to="/stef"><Img sizes={this.props.data.image03.sizes}/></Link>
+                  <h3>Stef</h3>
+                </li>
+                <li>
+                  <Link to="/stef"><Img sizes={this.props.data.image04.sizes}/></Link>
+                  <h3>Aly</h3>
+                </li>
+                <li>
+                  <Link to="/stef"><Img sizes={this.props.data.image05.sizes}/></Link>
+                  <h3>Jason and Pia</h3>
+                </li>
+                <li>
+                  <Link to="/stef"><Img sizes={this.props.data.image06.sizes}/></Link>
+                  <h3>Briton and Joy</h3>
                 </li>
             </ul>
           </section>
@@ -76,17 +88,32 @@ export const pageQuery = graphql`
         title
       }
     }
-    imagePortraits: imageSharp(id: { regex: "/PortraitsCover.jpg/" }) {
+    image01: imageSharp(id: { regex: "/raki00.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
-    imageEvents: imageSharp(id: { regex: "/EventsCover.jpg/" }) {
+    image02: imageSharp(id: { regex: "/tooting00.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     } 
-    imageWeddings: imageSharp(id: { regex: "/WeddingsCover.jpg/" }) {
+    image03: imageSharp(id: { regex: "/stef00.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    image04: imageSharp(id: { regex: "/aly00.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    } 
+    image05: imageSharp(id: { regex: "/jasonpia00.jpg/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
+      }
+    } 
+    image06: imageSharp(id: { regex: "/britjoy00.jpg/" }) {
       sizes(maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
