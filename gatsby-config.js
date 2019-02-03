@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Jon Siu Productions",
     author: "jon siu",
-    description: "Web Page of Jon Siu Productions",
+    description: "Portrait and Events Photography",
     siteUrl: 'https://www.jonsiupro.com',
   },
   pathPrefix: '/',
