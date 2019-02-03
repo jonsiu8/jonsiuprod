@@ -20,7 +20,7 @@ const Footer = (props) => (
                 <dt>Phone</dt>
                 <dd>(+63) 927 5225 108</dd>
                 <dt>Email</dt>
-                <dd><a href="#">jonsiuprod@gmail.com</a></dd>
+                <dd><a href="#">jonsiupro@gmail.com</a></dd>
             </dl>
             <ul className="icons">                
                 <li><a href="#" className="icon fa-facebook alt"><span className="label">Facebook</span></a></li>
