@@ -23,8 +23,8 @@ const Footer = (props) => (
                 <dd><a href="#">jonsiupro@gmail.com</a></dd>
             </dl>
             <ul className="icons">                
-                <li><a href="#" className="icon fa-facebook alt"><span className="label">Facebook</span></a></li>
-                <li><a href="#" className="icon fa-instagram alt"><span className="label">Instagram</span></a></li>                
+                <li><a href="https://www.facebook.com/jonsiupro" className="icon fa-facebook alt"><span className="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/jonsiuproductions/" className="icon fa-instagram alt"><span className="label">Instagram</span></a></li>                
             </ul>
         </section>
         <p className="copyright">&copy; Jon Siu Productions</p>
