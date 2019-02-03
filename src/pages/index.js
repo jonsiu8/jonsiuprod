@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import Nav from '../components/Nav'
 import pic01 from '../assets/images/pic01.jpg'
 import Img from 'gatsby-image'
+import favicon from './favicon.png'
 
 class Index extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class Index extends React.Component {
 
     return (
       <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} >
+        <link rel="icon" type="image/png" href={favicon} />
+        </Helmet>
 
         <Header />
 
