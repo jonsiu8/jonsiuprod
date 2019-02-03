@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: "Jon Siu Productions",
     author: "jon siu",
-    description: "A Gatsby of Jon Siu Productions",
-    siteUrl: 'https://www.jonsiu.online',
+    description: "Web Page of Jon Siu Productions",
+    siteUrl: 'https://www.jonsiupro.com',
   },
   pathPrefix: '/',
   plugins: [
